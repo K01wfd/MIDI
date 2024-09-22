@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Setting -->
+    <dialog class="setting-window">
+      <div>
+        <h3>setting</h3>
+        <button class="close-setting-button">close</button>
+      </div>
+    </dialog>
+    <div class="parent">
+      <!-- Header -->
+      <header>
+        <h1 class="current-keyboard">No connected keyboard</h1>
+        <nav>
+          <menu class="nav-menu">
+            <li>
+              <button class="btn menu-btn" data-value="">Keyboard 1</button>
+            </li>
+            <li>
+              <button class="btn menu-btn" data-value="">Keyboard 2</button>
+            </li>
+            <li>
+              <button class="btn menu-btn" id="connect-btn">Connect</button>
+            </li>
+          </menu>
+        </nav>
+      </header>
+      <!-- Functions -->
+      <div class="function">
+        <div class="transpose">
+          <button class="btn trans-btn" data-id="transMinus">b</button>
+          <p class="trans-value">0</p>
+          <button class="btn trans-btn" data-id="transPlus">#</button>
+        </div>
+        <div class="octaves">
+          <button class="btn octave-btn" data-id="octavedown">- Oct</button
+          ><button class="btn octave-btn" data-id="octaveup">Oct +</button>
+        </div>
+        <div class="other">
+          <button class="btn reset-button">Reset</button>
+          <button class="btn setting-button">Setting</button>
+        </div>
+      </div>
+      <!-- Scale -->
+      <div class="scale">
+        <div class="black-notes">
+          <div class="two-pairs">
+            <button class="btn black-btn" data-id="scalenote" data-value="c#">
+              C#</button
+            ><button class="btn black-btn" data-id="scalenote" data-value="d#">
+              D#
+            </button>
+          </div>
+          <div class="three-pairs">
+            <button class="btn black-btn" data-id="scalenote" data-value="f#">
+              F#</button
+            ><button class="btn black-btn" data-id="scalenote" data-value="g#">
+              G#</button
+            ><button class="btn black-btn" data-id="scalenote" data-value="a#">
+              A#
+            </button>
+          </div>
+        </div>
+        <div class="white-notes">
+          <button class="btn white-btn" data-id="scalenote" data-value="c">
+            C</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="d">
+            D</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="e">
+            E</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="f">
+            F</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="g">
+            G</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="a">
+            A</button
+          ><button class="btn white-btn" data-id="scalenote" data-value="b">
+            B
+          </button>
+        </div>
+      </div>
+      <!-- Presets -->
+      <div class="presets">
+        <button class="btn preset-btn">Preset1</button
+        ><button class="btn preset-btn">Preset2</button
+        ><button class="btn preset-btn">Preset3</button
+        ><button class="btn preset-btn">Preset4</button>
+      </div>
+    </div>
+    <script src="setting.js"></script>
+    <script src="factory.js"></script>
+    <script src="connection.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

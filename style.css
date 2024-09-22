@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #212121;
+  color: #ddd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+menu {
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Utils */
+.btn {
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ddd;
+  background: linear-gradient(to right, rgb(0, 96, 199), rgb(46, 147, 255));
+  &:active {
+    transform: scale(0.97);
+  }
+}
+.parent {
+  max-width: 750px;
+  margin: 0 auto;
+}
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.3rem;
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .menu-btn {
+    padding: 0.4rem 0.5rem;
+  }
+}
+/* Functions */
+.function {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .transpose {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    .trans-btn {
+      padding: 0.3rem 0.8rem;
+    }
+    .active-btn {
+      background: linear-gradient(to right, rgb(199, 0, 23), rgb(255, 46, 77));
+    }
+  }
+  .octaves {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .octave-btn {
+      padding: 0.3rem 0.6rem;
+    }
+  }
+  .other {
+    .btn {
+      padding: 0.3rem 0.8rem;
+    }
+  }
+}
+
+/* Scale */
+.scale {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .black-notes {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    .two-pairs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(-2rem);
+    }
+    .three-pairs {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(2rem);
+    }
+    .btn {
+      padding: 0.8rem 1.2rem;
+    }
+  }
+  .white-notes {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .btn {
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+.active-note {
+  background: linear-gradient(to right, rgb(199, 0, 23), rgb(255, 46, 77));
+}
+/* Presets */
+.presets {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  .preset-btn {
+    padding: 0.3rem;
+  }
+}
+
+.setting-window {
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+.setting-window::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
