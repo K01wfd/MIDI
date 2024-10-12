@@ -10,14 +10,13 @@ function convertTo7bitChunk(decimal) {
     chunks.push(binary.slice(i, i + 7));
   }
 
-  const hexByte = chunks.map((chunk) => {
+  let hexByte = chunks.map((chunk) => {
     const decimalValue = parseInt(chunk, 2);
     return decimalValue.toString(16).toUpperCase().padStart(2, '0');
   });
+  hexByte = hexByte.splice(-1);
   return hexByte.join(' ');
 }
-
-console.log(convertTo7bitChunk(256 - 50));
 
 const tuneMessage = [
   0xf0, 0x42, 0x30, 0x50, 0x51, 0x01, 0x00, 0x00, 0x00, 0x03, 0x02, 0x1c, 0x06,

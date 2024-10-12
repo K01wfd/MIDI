@@ -1,13 +1,26 @@
 const korgTritonSetting = {
   name: 'TRITON Extreme',
-  globalMessage: {
-    prefix: [0xf0, 0x42, 0x30, 0x50, 0x51, 0x01],
-  },
   sendTranspose(output, value) {
-    const tuneMessage = [0xf0, 0x42, 0x30, 0x19, 0x4e, 0x02, 0x00, 0xf7];
+    const hexValue = convertTo7bitChunk(value);
+    console.log(hexValue);
+    const transposeMessage = [
+      0xf0,
+      0x42,
+      0x30,
+      0x50,
+      0x4e,
+      0x07,
+      0x00,
+      0x01,
+      0x00,
+      0x00,
+      0x00,
+      hexValue,
+      0xf7,
+    ];
 
     if (output) {
-      output.send(tuneMessage);
+      output.send(transposeMessage);
       return true;
     } else {
       console.log('No out put selected');

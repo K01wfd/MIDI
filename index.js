@@ -24,7 +24,7 @@ const resetBitton = document
 
 let output;
 
-let defaultTranspose = 256;
+let defaultTranspose = 0;
 
 let defaultOctave = 0;
 const storedNotes = [];
@@ -59,32 +59,32 @@ function resetGlobal() {
 
 // SEND TRANSPOSE
 transPlus.addEventListener('click', () => {
-  if (defaultTranspose < 268) defaultTranspose++;
+  if (defaultTranspose < 12) defaultTranspose++;
   const resault = korgTritonSetting.sendTranspose(output, defaultTranspose);
 
   if (resault) {
-    if (defaultTranspose > 256) {
+    if (defaultTranspose > 0) {
       transPlus.classList.add('active-btn');
       transMinus.classList.remove('active-btn');
     } else {
       transPlus.classList.remove('active-btn');
       transMinus.classList.remove('active-btn');
     }
-    transposeValue.textContent = defaultTranspose - 256;
+    transposeValue.textContent = defaultTranspose;
   }
 });
 transMinus.addEventListener('click', () => {
-  if (defaultTranspose > 244) defaultTranspose--;
+  if (defaultTranspose > -12) defaultTranspose--;
   const resault = korgTritonSetting.sendTranspose(output, defaultTranspose);
   if (resault) {
-    if (defaultTranspose < 256) {
+    if (defaultTranspose < 0) {
       transPlus.classList.remove('active-btn');
       transMinus.classList.add('active-btn');
     } else {
       transPlus.classList.remove('active-btn');
       transMinus.classList.remove('active-btn');
     }
-    transposeValue.textContent = defaultTranspose - 256;
+    transposeValue.textContent = defaultTranspose;
   }
 });
 
